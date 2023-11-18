@@ -6,8 +6,8 @@ const getItems = async (req, res) => {
 }
 
 const addItem = async (req, res) => {
-  const { name, price, savings } = req.body
-  const item = wishlist.create({ user: req.user._id, name, price, savings })
+  const { name, price, savings, image } = req.body
+  const item = wishlist.create({ user: req.user._id, name, price, savings, image })
   res.json(item)
 }
 

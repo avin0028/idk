@@ -14,10 +14,7 @@ const Header = () => {
 
   return (
     <header className="bg-[#2F729D] text-white	justify-between	p-4 flex">
-      {/* <FaBars
-        className="text-3xl cursor-pointer hover:opacity-25"
-        onClick={menuIconClick}
-      /> */}
+      <div> {userInfo.name} عزیز خوش آمدید</div>
 
       <div className="">امروز {date.toLocaleDateString("fa-IR", dateoptions)}</div>
     </header>
