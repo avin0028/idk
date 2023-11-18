@@ -15,9 +15,12 @@ const wishlistSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    allocatedwage: {
+    savings: {
       type: Number,
       required: true,
+    },
+    image: {
+      type: String,
     },
   },
   { timestapms: true }

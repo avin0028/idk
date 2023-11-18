@@ -40,7 +40,7 @@ const Signin = () => {
     try {
       const response = await register({ name, email, password }).unwrap()
       dispatch(setUserInfo({ ...response }))
-      navigate("/")
+      navigate("/dashboard")
     } catch (err) {
       toast.error(err?.data?.message || err.message || "یه مشکلی پیش اومد")
     }

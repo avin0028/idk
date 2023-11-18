@@ -28,7 +28,7 @@ const Signin = () => {
     try {
       const response = await login({ email, password }).unwrap()
       dispatch(setUserInfo({ ...response }))
-      navigate("/")
+      navigate("/dashboard")
     } catch (err) {
       toast.error(err.data.error || "یه مشکلی پیش اومد")
     }

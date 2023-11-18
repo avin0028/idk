@@ -21,10 +21,10 @@ const registerUser = async (req, res) => {
     })
 
     res.cookie("jwttoken", token, {
-      expires: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000), //21 days
+      maxAge: 21 * 24 * 60 * 60 * 1000, //21 days
       httpOnly: true,
-      samesite: "strict",
-      secure: process.env.NODE_ENV !== "development",
+      // sameSite: "strict",
+      // secure: process.env.NODE_ENV !== "development",
     })
 
     res.status(201).json({
@@ -48,23 +48,24 @@ const loginUser = async (req, res) => {
       expiresIn: "21d",
     })
 
-    res.cookie("jwttoken", token, {
-      expires: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000), //21 days
-      httpOnly: true,
-      samesite: "strict",
-      secure: process.env.NODE_ENV !== "development",
-    })
-    res.json({
-      id: user._id,
-      name: user.name,
-      email: user.email,
-    })
+    res
+      .cookie("jwt", token, {
+        maxAge: 21 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: "strict",
+        secure: process.env.NODE_ENV !== "development",
+      })
+      .json({
+        id: user._id,
+        name: user.name,
+        email: user.email,
+      })
   } else {
     res.status(401).json({ error: "ایمیل یا رمزعبور اشتباه است" })
   }
 }
 const logoutUser = async (req, res) => {
-  res.clearCookie("jwttoken")
+  res.clearCookie("jwt")
   res.status(200).json({ message: "Successfully logged out" })
 }
 export { loginUser, logoutUser, registerUser }
