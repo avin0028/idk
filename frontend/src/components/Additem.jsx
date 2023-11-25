@@ -49,7 +49,7 @@ const Additem = () => {
     <>
       {!submitted ? (
         <>
-          <div className="container mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700 ">
+          <div className="container float-left w-5/6 mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700 ">
             <form
               onSubmit={handleSubmit}
               className="w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-6"
@@ -103,6 +103,12 @@ const Additem = () => {
             <h2 className="text-xl mt-2">تصویر محصول:</h2>
             <img className="text-xl mt-2 w-64 h-64" src={imageitem}></img>
           </div>
+          <button
+            className="mt-2 w-26  bg-[#2F739C] text-white p-2 rounded font-semibold hover:opacity-75"
+            onClick={setSubmitted(false)}
+          >
+            افزودن آیتم جدید
+          </button>
         </div>
       )}
     </>

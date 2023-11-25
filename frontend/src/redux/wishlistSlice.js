@@ -17,6 +17,13 @@ export const wishlistSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    getitem: builder.mutation({
+      query: () => ({
+        url: "/wishlist/getitem",
+        method: "GET",
+      }),
+    }),
   }),
 })
-export const { useAdditemMutation, useUploadimageMutation } = wishlistSlice
+export const { useAdditemMutation, useUploadimageMutation, useGetitemMutation } =
+  wishlistSlice

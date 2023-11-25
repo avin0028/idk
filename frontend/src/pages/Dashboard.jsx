@@ -7,15 +7,17 @@ import Changepass from "../components/Changepass"
 
 const Dashboard = () => {
   return (
-    <div className="h-screen">
-      <Header />
-      <SidebarComponent />
-      <Routes>
-        <Route path="/" exact element={<Showitems />} />
-        <Route path="/additem" exact element={<Additem />} />
-        <Route path="/changepass" exact element={<Changepass />} />
-      </Routes>
-    </div>
+    <>
+      <div>
+        <Header />
+        <SidebarComponent />
+        <Routes>
+          <Route path="/" exact element={<Showitems />} />
+          <Route path="/additem" exact element={<Additem />} />
+          <Route path="/changepass" exact element={<Changepass />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 export default Dashboard

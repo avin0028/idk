@@ -22,7 +22,19 @@ export const usersSlice = apiSlice.injectEndpoints({
         method: "POST",
       }),
     }),
+    changepass: builder.mutation({
+      query: (data) => ({
+        url: "users/changepass",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 })
 
-export const { useRegisterMutation, useLoginMutation, useLogoutMutation } = usersSlice
+export const {
+  useRegisterMutation,
+  useLoginMutation,
+  useLogoutMutation,
+  useChangepassMutation,
+} = usersSlice

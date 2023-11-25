@@ -27,10 +27,10 @@ const SidebarComponent = () => {
   }
   return (
     <>
-      <div className="hidden sm:block p-2 h-full fixed right-0 bg-[#303439] text-white sm:w-32 md:w-48   ">
+      <div className="hidden sm:block float-right sm:static p-2 h-[95vh] fixed right-0 bg-[#303439] text-white w-1/6   ">
         <div className="flex items-center mt-8 cursor-pointer	hover:opacity-75">
           <FaBookmark className="w-6 h-6 text-[color:#6B7283] " />
-          <Link to="" className=" sm:text-lg text-xl mr-2">
+          <Link to="/dashboard" className=" sm:text-lg text-xl mr-2">
             مشاهده آیتم ها
           </Link>
         </div>

@@ -68,4 +68,15 @@ const logoutUser = async (req, res) => {
   res.clearCookie("jwt")
   res.status(200).json({ message: "Successfully logged out" })
 }
-export { loginUser, logoutUser, registerUser }
+const changepass = async (req, res) => {
+  const { email, pastpass, newpass } = req.body
+  const user = await users.findOne({ email })
+
+  if (user && user.checkPassword(pastpass)) {
+    users.findOneAndUpdate({ password: pastpass }, newpass)
+    res.json({ message: "رمز عبور تغییر یافت" }).status(200)
+  } else {
+    res.status(400).json({ message: "رمز عبور اشتباه وارد شد" })
+  }
+}
+export { loginUser, logoutUser, registerUser, changepass }
