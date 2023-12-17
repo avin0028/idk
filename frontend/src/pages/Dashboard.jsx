@@ -10,12 +10,13 @@ const Dashboard = () => {
     <>
       <div>
         <Header />
-        <SidebarComponent />
         <Routes>
           <Route path="/" exact element={<Showitems />} />
+          <Route path="/:pageNumber" element={<Showitems />} />
           <Route path="/additem" exact element={<Additem />} />
           <Route path="/changepass" exact element={<Changepass />} />
         </Routes>
+        <SidebarComponent />
       </div>
     </>
   )

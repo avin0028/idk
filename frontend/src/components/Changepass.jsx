@@ -34,7 +34,7 @@ const Changepass = () => {
   }
   return (
     <>
-      <div className="float-left container w-5/6 mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700 ">
+      <div className="float-left container w-full sm:w-4/5  h-[83vh] sm:h-[90vh]  mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700 ">
         <div className="text-center w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-4  ">
           <h1 className="text-3xl font-semibold  ">تغییر رمز عبور</h1>
         </div>

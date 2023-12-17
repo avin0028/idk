@@ -8,7 +8,6 @@ const authorization = async (req, res, next) => {
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
       req.user = await users.findById(decoded.userId).select("-password")
-
       next()
     } catch (error) {
       console.error(error)

@@ -12,7 +12,7 @@ const Header = () => {
   const menuIconClick = () => {}
 
   return (
-    <header className="bg-[#2F729D] text-white	justify-between h-[5vh]	p-4 flex">
+    <header className="content-center	 bg-[#2F729D] text-white	justify-between h-[5vh] p-4 pb-10 flex">
       <div> {userInfo.name} عزیز خوش آمدید</div>
 
       <div className="">امروز {date.toLocaleDateString("fa-IR", dateoptions)}</div>

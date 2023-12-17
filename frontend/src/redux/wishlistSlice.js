@@ -17,13 +17,33 @@ export const wishlistSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
-    getitem: builder.mutation({
-      query: () => ({
-        url: "/wishlist/getitem",
-        method: "GET",
+    getitems: builder.query({
+      query: ({ pageNumber, pageWidth }) => ({
+        url: "/wishlist/getitems",
+        params: { pageNumber, pageWidth },
+      }),
+      keepUnusedDataFor: 5,
+    }),
+    deleteitem: builder.mutation({
+      query: (data) => ({
+        url: "/wishlist/deleteitem",
+        method: "DELETE",
+        body: data,
+      }),
+    }),
+    addsavings: builder.mutation({
+      query: (data) => ({
+        url: "/wishlist/addsavings",
+        method: "PUT",
+        body: data,
       }),
     }),
   }),
 })
-export const { useAdditemMutation, useUploadimageMutation, useGetitemMutation } =
-  wishlistSlice
+export const {
+  useAdditemMutation,
+  useUploadimageMutation,
+  useGetitemsQuery,
+  useDeleteitemMutation,
+  useAddsavingsMutation,
+} = wishlistSlice

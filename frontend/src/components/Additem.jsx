@@ -49,7 +49,7 @@ const Additem = () => {
     <>
       {!submitted ? (
         <>
-          <div className="container float-left w-5/6 mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700 ">
+          <div className="container float-left  h-[83vh] sm:h-[90vh]  w-full sm:w-4/5 mx-auto p-4 mt-12 bg-white flex flex-col items-center justify-center text-gray-700 ">
             <form
               onSubmit={handleSubmit}
               className="w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 mb-6"
