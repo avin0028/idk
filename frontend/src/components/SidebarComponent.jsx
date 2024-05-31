@@ -3,6 +3,7 @@ import {
   FaHeartCirclePlus,
   FaKey,
   FaArrowRightFromBracket,
+  FaUser,
 } from "react-icons/fa6"
 import { useLogoutMutation } from "../redux/usersSlice"
 import { useNavigate } from "react-router-dom"
@@ -46,6 +47,12 @@ const SidebarComponent = () => {
             تغییر رمز عبور
           </Link>
         </div>
+        <div className="flex flex-center items-center  mt-8 cursor-pointer hover:opacity-75 ">
+          <FaUser className="w-10 h-10  text-[color:#6B7283]" />
+          <Link to="changename" className="text-lg mr-2 ">
+            تغییر نام
+          </Link>
+        </div>
         <div
           className="flex items-center mt-8 cursor-pointer hover:opacity-75"
           onClick={logouthandler}
@@ -73,6 +80,13 @@ const SidebarComponent = () => {
             تغییر رمز عبور
           </Link>
         </div>
+        <div className="flex flex-col items-center ">
+          <FaUser className="w-6 h-6  text-[color:#6B7283]" />
+          <Link to="changepass" className="text-sm ">
+            تغییر نام
+          </Link>
+        </div>
+
         <div className="flex flex-col items-center">
           <FaArrowRightFromBracket className="w-6 h-6  text-[color:#6B7283]" />
           <span className=" text-sm">خروج از حساب</span>

@@ -29,6 +29,13 @@ export const usersSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    changename: builder.mutation({
+      query: (data) => ({
+        url: "users/changename",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 })
 
@@ -37,4 +44,5 @@ export const {
   useLoginMutation,
   useLogoutMutation,
   useChangepassMutation,
+  useChangenameMutation,
 } = usersSlice

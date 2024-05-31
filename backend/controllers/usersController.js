@@ -79,4 +79,14 @@ const changepass = async (req, res) => {
     res.status(400).json({ message: "رمز عبور اشتباه وارد شد" })
   }
 }
-export { loginUser, logoutUser, registerUser, changepass }
+const changename = async (req, res) => {
+  const { email, newname } = req.body
+
+  try {
+    const result = await users.findOneAndUpdate({ email, name: newname })
+    res.status(200).json({ message: "نام حساب تغییر یافت", statuscode: 200 })
+  } catch (err) {
+    res.json({ message: err.data?.message, statuscode: 400 }).status(400)
+  }
+}
+export { loginUser, logoutUser, registerUser, changepass, changename }
